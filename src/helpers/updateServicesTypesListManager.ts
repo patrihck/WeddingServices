@@ -32,7 +32,7 @@ const deselectRelatedService = (previouslySelectedServices: ServiceType[],
     }
 }
 
-export const updateServicesTypesListManager = (previouslySelectedServices: ServiceType[],
+export const updateServicesTypes = (previouslySelectedServices: ServiceType[],
     action: { type: "Select" | "Deselect"; service: ServiceType }) => {    
         if (checkIfShouldNotUpdateList(previouslySelectedServices, action)) {
             return previouslySelectedServices;

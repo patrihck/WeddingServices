@@ -1,7 +1,7 @@
 import lodash from "lodash";
 import { ServiceType } from './models/ServiceType';
 import { ServiceYear } from './models/ServiceYear';
-import { updateServicesTypesListManager } from "./helpers/updateServicesTypesListManager";
+import { updateServicesTypes } from "./helpers/updateServicesTypesListManager";
 import { getServices } from "./repositories/serviceRepository";
 import { applyDiscount } from "./services/discountService";
 
@@ -10,7 +10,7 @@ export const updateSelectedServices = (
     action: { type: "Select" | "Deselect"; service: ServiceType }
 ) => {
     
-    return updateServicesTypesListManager(previouslySelectedServices, action);
+    return updateServicesTypes(previouslySelectedServices, action);
     
 };
 
