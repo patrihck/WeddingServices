@@ -190,8 +190,6 @@ describe.each([
 
             const priceChangeWithSession = withSession.finalPrice - withoutSession.finalPrice;
 
-            console.log(["VideoRecording", "Photography"], year, withoutSession.basePrice, withoutSession.finalPrice)
-            console.log(["VideoRecording", "Photography", "WeddingSession"], year, withSession.basePrice, withSession.finalPrice)
             expect(withSession.basePrice).toBeGreaterThan(0);
             expect(withSession.finalPrice).toBeGreaterThan(0);
             expect(priceChangeWithSession).toEqual(increase);
@@ -202,7 +200,6 @@ describe.each([
             const onlySession = calculatePrice(["WeddingSession"], year);
             const withSession = calculatePrice(["VideoRecording", "Photography", "WeddingSession"], year);
 
-            // console.log(withoutSession, onlySession, withSession);
             const priceWithoutDiscounts = withoutSession.finalPrice + onlySession.finalPrice;
 
             expect(priceWithoutDiscounts).toBeGreaterThan(withSession.finalPrice);
